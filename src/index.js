@@ -1,40 +1,31 @@
 import readLineSync from 'readline-sync';
 
-const printGreeting = () => {
+const startGameLoop = (gameDescription, generateGameEntry) => {
+  const GAME_CYCLES_NUMBER = 3;
+
   console.log('Welcome to the Brain Games!');
-  const name = readLineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}`);
-  return name;
+  const userName = readLineSync.question('May I have your name? ');
+
+  console.log(`Hello, ${userName}`);
+  console.log(gameDescription);
+
+  for (let i = 0; i < GAME_CYCLES_NUMBER; i++) {
+    const [question, correctAnswer] = generateGameEntry();
+
+    console.log(`Question: ${question}`);
+
+    const userAnswer = readLineSync.question('Your answer: ');
+
+    if (userAnswer !== correctAnswer) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${userName}!`);
+      return;
+    }
+
+    console.log('Correct!');
+  }
+
+  console.log(`Congratulations, ${userName}!`);
 };
 
-const printGameDescription = (description) => {
-  console.log(description);
-};
-
-const printQuestion = (content) => {
-  console.log(`Question: ${content}`);
-};
-
-const printTryAgainMessage = (name, userAnswer, correctAnswer) => {
-  console.log(
-    `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`
-  );
-  console.log(`Let's try again, ${name}!`);
-};
-
-const printCorrectMessage = () => {
-  console.log('Correct!');
-};
-
-const printCongratsMessage = (name) => {
-  console.log(`Congratulations, ${name}!`);
-};
-
-export {
-  printGreeting,
-  printGameDescription,
-  printQuestion,
-  printTryAgainMessage,
-  printCorrectMessage,
-  printCongratsMessage,
-};
+export default startGameLoop;
