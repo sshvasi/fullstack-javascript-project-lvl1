@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { getRandomNumber } from '../src/helpers.js';
-import startGameLoop from '../src/index.js';
+import { getRandomNumber } from '../../src/helpers.js';
+import startGameLoop from '../../src/index.js';
 
 const calcGame = () => {
   const GAME_DESCRIPTION = 'What is the result of the expression?';
