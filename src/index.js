@@ -9,7 +9,7 @@ const startGameLoop = (gameDescription, generateGameEntry) => {
   console.log(`Hello, ${userName}`);
   console.log(gameDescription);
 
-  for (let i = 0; i < GAME_CYCLES_NUMBER; i++) {
+  for (let i = 0; i < GAME_CYCLES_NUMBER; i += 1) {
     const [question, correctAnswer] = generateGameEntry();
 
     console.log(`Question: ${question}`);
