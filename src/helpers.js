@@ -19,4 +19,16 @@ const getGcd = (x, y) => {
   return a;
 };
 
-export { isEven, getRandomNumber, getGcd };
+const isPrime = (n) => {
+  if (n % 2 == 0) return n === 2;
+
+  const m = Math.sqrt(n);
+
+  for (let i = 3; i <= m; i += 2) {
+    if (n % i === 0) return false;
+  }
+
+  return true;
+};
+
+export { isEven, getRandomNumber, getGcd, isPrime };
