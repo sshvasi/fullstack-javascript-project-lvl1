@@ -8,7 +8,7 @@ const evenNumberGame = () => {
     'Answer "yes" if the number is even, otherwise answer "no".';
 
   const generateGameEntry = () => {
-    const targetNumber = getRandomNumber(100);
+    const targetNumber = getRandomNumber(0, 100);
     const correctAnswer = isEven(targetNumber) ? 'yes' : 'no';
 
     return [targetNumber, correctAnswer];
