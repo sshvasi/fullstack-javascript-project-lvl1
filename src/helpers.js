@@ -6,4 +6,17 @@ const getRandomNumber = (min, max) => {
   return randomInteger;
 };
 
-export { isEven, getRandomNumber };
+const getGcd = (x, y) => {
+  let a = Math.abs(x);
+  let b = Math.abs(y);
+
+  while (b) {
+    const temp = b;
+    b = a % b;
+    a = temp;
+  }
+
+  return a;
+};
+
+export { isEven, getRandomNumber, getGcd };
