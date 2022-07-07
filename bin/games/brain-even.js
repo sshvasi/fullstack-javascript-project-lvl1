@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import startGameLoop from '../src/index.js';
-import { isEven, getRandomNumber } from '../src/helpers.js';
+import startGameLoop from '../../src/index.js';
+import { isEven, getRandomNumber } from '../../src/helpers.js';
 
 const evenNumberGame = () => {
   const GAME_DESCRIPTION =
