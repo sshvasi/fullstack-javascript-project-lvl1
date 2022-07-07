@@ -1,6 +1,6 @@
 const isEven = (number) => number % 2 === 0;
 
-const getRandomNumber = (min, max) => {
+const getRandomNumber = (min = 0, max = 100) => {
   const randomFloat = min + Math.random() * (max + 1 - min);
   const randomInteger = Math.floor(randomFloat);
   return randomInteger;

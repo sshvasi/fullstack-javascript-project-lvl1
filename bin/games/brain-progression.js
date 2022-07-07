@@ -18,7 +18,7 @@ const progressionGame = () => {
 
   const generateGameEntry = () => {
     const length = 10;
-    const start = getRandomNumber(0, 50);
+    const start = getRandomNumber();
     const step = getRandomNumber(1, 5);
 
     const progression = getProgression(start, step, length);
